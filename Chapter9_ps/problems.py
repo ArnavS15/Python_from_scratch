@@ -1,3 +1,4 @@
+'''
 # Q1 write a program to read the text from a given file "poems.txt" an find out whether it contains the word twinkle
 with open("poems.txt") as f:
     content = f.read().lower()
@@ -65,3 +66,58 @@ for word in words:
 
 with open("donkey.txt", "w") as f:
     f.write(content)
+'''
+'''
+# Q6 write a program to mine a log file and find out whether it contains 'python'
+with open("log.txt") as f:
+    content = f.read()
+
+if("python" in content):
+    print("yes python is present")
+    
+else:
+    print("python is not present")
+
+# Q7 find the line number which has python word from the log file
+with open("log.txt") as f:
+    lines = f.readlines() # content changes to line # means to check content line by line we use readlines and lines instead of read and content for f. respectively!
+
+lineno = 1 # to start the checking from first line of the file content
+for line in lines:
+    if("python" in line.lower()):
+        print(f"yes python is present, line no:{lineno}")
+        lineno += 1 # because this was all for line 1 and we want all lines to be checked islie like a loop humne end me increment daldia for the check loop to cover through all lines one by one
+'''
+'''        
+# Q8 write a program to make copy of a text file "this.txt"
+with open("this.txt") as f:
+    content = f.read() # ek file banake content dala usme orignal hogya jo
+
+with open("this_copy.txt", "w") as f: # write ke bharose ek nayi file banegi copy file " " and uska content since write me hora wo bhi content means what was defined in orignal file wala codes
+    f.write(content)
+    f.write("\nsee we did copy all the lines of og content") # the line of code we can use to copy all the lines from og and add another wanted line to our new file without disturbing the orignal file
+    # \n used dekhlena "string" me .write ke aage
+'''
+'''
+# Q9 write a program to check if two files are identical
+with open("this.txt") as f:
+    content1 = f.read()
+
+with open("this_copy.txt")as f:
+    content2 = (f.read)
+
+if (content1 == content2):
+    print("yes files are identical")
+else:
+    print("no they are not identical")
+'''
+# Q10 write a program to wipe the content of a file
+with open("file.txt", "w") as f:
+    f.write("") # blank write kardo to wipe out hojayega
+
+# Q11 write a python program to rename a file to "renamed_by_python.txt" 
+with open("old.txt") as f:
+    content = f.read()
+
+with open("renamed_by_python.txt" , 'w') as f:
+    f.write(content) # content likhdia yaha pe to means ki link kardia 2 ko and use hi modify kara hai through write
