@@ -4,7 +4,7 @@ class Employee: # a class is defined
     salary = 1200000 
 
     def __init__(self):
-        print("i am creating an object") # dunder methods me hai _init_ (starts and ends as _x_ ) and they get printed without getting called
+        print("i am creating an object") # dunder methods me hai __init__ (starts and ends as 2 underscores each side pe _x_ ) and they get printed without getting called
         #init function me agar self ke aage aur attributes jode , use karke then we have to sepeartely define sabki self.values and then call then last me ek sath
     def getInfo(self): # class ke andar function daldia
         print(f"the language is {self.language}. the salary is {self.salary}")
@@ -21,7 +21,7 @@ class Employee:
     language = "Python"
     salary = 1200000
 
-    def _init_(self, name, salary ,language ):
+    def __init__(self, name, salary ,language ): # 2 underscores each side pe
         self.name = name
         self.salary = salary
         self.language = language
@@ -32,4 +32,5 @@ class Employee:
 
    
 harry = Employee("Harry", 1300000 , "Javascript")
-print(harry.name, harry.salary)
+print(harry.name, harry.salary, harry.language)
+# print karne pe employee class me se self use karke defined object harry ka Haryyy wali details arguments display hogye
